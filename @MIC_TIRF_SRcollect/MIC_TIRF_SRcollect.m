@@ -394,23 +394,23 @@ methods
             end
 
             %Setup laser for aquisition
-            if obj.TIRF.Laser405Aq
-                obj.TIRF.Laser405.setPower(obj.TIRF.Laser405High);
+            if obj.Laser405Aq
+                obj.TIRF.Laser405.setPower(obj.Laser405High);
                 obj.TIRF.Laser405.on;
             end
-            if obj.TIRF.Laser488Aq
-                obj.TIRF.Laser488.setPower(obj.TIRF.Laser488High);
+            if obj.Laser488Aq
+                obj.TIRF.Laser488.setPower(obj.Laser488High);
                 obj.TIRF.Laser488.on;
             end
-            if obj.TIRF.Laser561Aq
-                obj.TIRF.Laser561.setPower(obj.TIRF.Laser561High);
+            if obj.Laser561Aq
+                obj.TIRF.Laser561.setPower(obj.Laser561High);
                 obj.TIRF.Laser561.on;
             end
-            if obj.TIRF.Laser642Aq
-                obj.TIRF.Laser642.setPower(obj.TIRF.Laser642High);
+            if obj.Laser642Aq
+                obj.TIRF.Laser642.setPower(obj.Laser642High);
                 obj.TIRF.Laser642.on;
             end
-            if obj.TIRF.LampAq
+            if obj.LampAq
                 obj.TIRF.LampObj.setPower(obj.LampPower);
                 obj.TIRF.LampObj.on;
             end
@@ -498,7 +498,7 @@ methods
         % and SRcollect settings
 
         % Children
-        [Children.Camera.Attributes,Children.Camera.Data,Children.Camera.Children]=...
+        [Children.TIRF.Attributes,Children.TIRF.Data,Children.TIRF.Children]=...
             obj.TIRF.exportState();
 
         [Children.Reg3D.Attributes,Children.Reg3D.Data,Children.Reg3D.Children]=...

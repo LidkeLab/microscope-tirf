@@ -77,6 +77,32 @@ methods
         %Children.LaserObj.Children.ShutterObj.Attributes.IsOpen
         %Children.LaserObj.Children.ShutterObj.Data
         %Children.LaserObj.Children.ShutterObj.Children
+        
+        [Children.Camera.Attributes,Children.Camera.Data,Children.Camera.Children]=...
+                obj.CameraObj.exportState();
+            
+            [Children.Stage.Attributes,Children.Stage.Data,Children.Stage.Children]=...
+                obj.StageObj.exportState();
+            
+            [Children.Laser405.Attributes,Children.Laser405.Data,Children.Laser405.Children]=...
+                obj.Laser405.exportState();
+            
+            [Children.Laser488.Attributes,Children.Laser488.Data,Children.Laser488.Children]=...
+                obj.Laser488.exportState();
+            
+            [Children.Laser561.Attributes,Children.Laser561.Data,Children.Laser561.Children]=...
+                obj.Laser561.exportState();
+            
+            [Children.Laser642.Attributes,Children.Laser642.Data,Children.Laser642.Children]=...
+                obj.Laser642.exportState();
+            
+            [Children.Lamp.Attributes,Children.Lamp.Data,Children.Lamp.Children]=...
+                obj.LampObj.exportState();
+            
+            Data=[];
+            
+            Attributes=[];
+            
     end
 end
 
