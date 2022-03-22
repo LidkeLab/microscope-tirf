@@ -259,7 +259,7 @@ properties2gui();
         gui2properties();
         stateLamp1=get(handles.Toggle_LaserLamp,'Value');
         if stateLamp1
-            obj.TIRF.LampObj.setPower(obj.TIRF.LampPower);
+            obj.TIRF.LampObj.setPower(obj.LampPower);
             obj.TIRF.LampObj.on;
         else
             obj.TIRF.LampObj.off;

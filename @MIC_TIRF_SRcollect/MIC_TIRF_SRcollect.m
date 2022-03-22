@@ -480,9 +480,9 @@ methods
             case 9
                 ROI=[1025 1536 513 1024];% Right Top quadrant
             case 10
-                ROI=[513 1024 1025 1536];% Right Bottom quadrant
+                ROI=[1025 1536 1025 1536];% Right Bottom quadrant
             case 11
-                ROI=[513 1536 513 1024];% Top half
+                ROI=[513 1536 513 1536];% Top half
             case 12
                 ROI=[513 1536 1025 1536];% Bottom half
             case 13
