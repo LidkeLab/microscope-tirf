@@ -1,4 +1,4 @@
-classdef MIC_TIRF<MIC_Abstract
+classdef MIC_TIRF<mic.abstract
 %TIRF Instrument Class for the TIRF Microscope
 % Sets up the lower level instruments.
 % The basis for all higher level functionality.
@@ -29,28 +29,28 @@ methods
 
         % Camera
         fprintf('Initializing Camera\n')
-        obj.CameraObj=MIC_HamamatsuCamera();
+        obj.CameraObj=mic.camera.HamamatsuCamera();
         obj.CameraObj.ReturnType='matlab';
         obj.CameraObj.DisplayZoom=4;
         % Stage
         fprintf('Initializing Stage\n')
-        obj.StageObj=MIC_MCLNanoDrive();
+        obj.StageObj=mic.stage3D.MCLNanoDrive();
         % Lasers
         fprintf('Initializing 405 laser\n')
-        obj.Laser405 = MIC_CrystaLaser405('Dev1','ao1','Port0/Line3');
+        obj.Laser405 = mic.lightsource.CrystaLaser405('Dev1','ao1','Port0/Line3');
      
         fprintf('Initializing 488 laser\n')
-        obj.Laser488=MIC_TIRFLaser488();
+        obj.Laser488=mic.lightsource.TIRFLaser488();
      
         fprintf('Initializing 561 laser\n')
-        obj.Laser561 = MIC_CoherentLaser561('COM4');
+        obj.Laser561 = mic.lightsource.CoherentLaser561('COM4');
      
         fprintf('Initializing 642 laser\n')
-        obj.Laser642 = MIC_TCubeLaserDiode('64838719','Power',80,182.5,1);
+        obj.Laser642 = mic_.lightsource.CubeLaserDiode('64838719','Power',80,182.5,1);
       
         % Lamp
         fprintf('Initializing lamp\n')
-        obj.LampObj=MIC_IX71Lamp('Dev1','ao3','Port0/Line12');
+        obj.LampObj=mic.lightsource.IX71Lamp('Dev1','ao3','Port0/Line12');
 
         obj.gui();
     end
@@ -107,7 +107,7 @@ methods
 end
 
 methods (Static=true)
-    function Success=unitTest()
+    function Success=funcTest()
         
         Success=true;
     end

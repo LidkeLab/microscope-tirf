@@ -1,6 +1,6 @@
 %% Camera
 
-Cam=MIC_HamamatsuCamera()
+Cam=mic.camera.HamamatsuCamera()
 Cam.gui()
 
 %center 512
@@ -25,30 +25,30 @@ Cam.ROI=[1025 1536 1025 1536]
 
 %% Lamp
 
-Lamp=MIC_IX71Lamp('Dev1','ao3','Port0/Line12')
+Lamp=mic.lightsource.IX71Lamp('Dev1','ao3','Port0/Line12')
 Lamp.gui()
 
 %% Stage
-Stage=MIC_MCLNanoDrive();
+Stage=mic.stage3D.MCLNanoDrive();
 Stage.gui()
 
 %% Lasers
 
 % fprintf('Initializing 405 laser\n')
-% Laser405 = MIC_CrystaLaser405('Dev1','ao1','Port0/Line3');
+% Laser405 = mic.lightsource.CrystaLaser405('Dev1','ao1','Port0/Line3');
 
 % 
 fprintf('Initializing 488 laser\n')
-Laser488=MIC_TIRFLaser488();
+Laser488=mic.lightsource.TIRFLaser488();
 Laser488.gui()
 
 % 
 % fprintf('Initializing 561 laser\n')
-% Laser561 = MIC_CoherentLaser561('COM4');
+% Laser561 = mic.lightsource.CoherentLaser561('COM4');
 
 % 
 fprintf('Initializing 642 laser\n')
-Laser642 = MIC_TCubeLaserDiode('64838719','Power',80,182.5,1);
+Laser642 = mic.lightsource.TCubeLaserDiode('64838719','Power',80,182.5,1);
 Laser642.gui()
 
 

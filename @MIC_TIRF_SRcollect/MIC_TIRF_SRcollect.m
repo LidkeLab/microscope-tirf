@@ -1,4 +1,4 @@
-classdef MIC_TIRF_SRcollect < MIC_Abstract
+classdef MIC_TIRF_SRcollect < mic.abstract
 % MIC_TIRF_SRcollect: Matlab instrument class for controlling TIRF
 % microscope in room 118.
 %
@@ -12,16 +12,16 @@ classdef MIC_TIRF_SRcollect < MIC_Abstract
 % Example: TIRF=MIC_TIRF_SRcollect();
 %
 % REQUIRES:
-%   MIC_Abstract
-%   MIC_LightSource_Abstract
-%   MIC_AndorCamera
-%   MIC_NewportLaser488
-%   MIC_CrystaLaser405
-%   MIC_CoherentLaser561
-%   MIC_TcubeLaserDiode
-%   MIC_IX71Lamp
-%   MIC_MCLNanoDrive
-%   MIC_Reg3DTrans
+%   mic.abstract
+%   mic.lightsource.abstract
+%   mic.camera.AndorCamera
+%   mic.lightsource.NewportLaser488
+%   mic.lightsource.CrystaLaser405
+%   mic.lightsource.CoherentLaser561
+%   mic.lightsource.TcubeLaserDiode
+%   mic.lightsource.IX71Lamp
+%   mic.stage3D.MCLNanoDrive
+%   mic.Reg3DTrans
 %   Matlab 2014b or higher
 %
 % CITATION:
@@ -89,8 +89,8 @@ methods
         % MIC_TIRF_SRcollect constructor
         %   Constructs object and initializes all hardware
 
-        % Enable autonaming feature of MIC_Abstract
-        obj = obj@MIC_Abstract(~nargout);
+        % Enable autonaming feature of mic.abstract
+        obj = obj@mic.abstract(~nargout);
         [p,~]=fileparts(which('MIC_TIRF_SRcollect'));
         f=fullfile(p,'TIRF_Calibrate.mat');
 
@@ -102,7 +102,7 @@ methods
 
         % Registration object
         fprintf('Initializing Registration object\n')
-        obj.R3DObj=MIC_Reg3DTrans(obj.TIRF.CameraObj,obj.TIRF.StageObj,f);
+        obj.R3DObj=mic.Reg3DTrans(obj.TIRF.CameraObj,obj.TIRF.StageObj,f);
         if ~exist(f,'file')
             %set the lamp
             if isempty(obj.LampPower) || obj.LampPower==0
@@ -372,9 +372,9 @@ methods
             case 'mat'
             case 'h5'
                 FileH5=fullfile(obj.SaveDir,[obj.BaseFileName s '.h5']);
-                MIC_H5.createFile(FileH5);
-                MIC_H5.createGroup(FileH5,'Channel01');
-                MIC_H5.createGroup(FileH5,'Channel01/Zposition001');
+                mic.H5.createFile(FileH5);
+                mic.H5.createGroup(FileH5,'Channel01');
+                mic.H5.createGroup(FileH5,'Channel01/Zposition001');
             otherwise
                 error('StartSequence:: unknown file save type')
         end
@@ -438,7 +438,7 @@ methods
                     save(fn,'sequence','Params');
                 case 'h5' %This will become default
                     S=sprintf('Data%04d',nn);
-                    MIC_H5.writeAsync_uint16(FileH5,'Channel01/Zposition001',S,sequence);
+                    mic.H5.writeAsync_uint16(FileH5,'Channel01/Zposition001',S,sequence);
                 otherwise
                     error('StartSequence:: unknown SaveFileType')
             end
@@ -450,7 +450,7 @@ methods
             case 'h5' %This will become default
                 % S='MIC_TIRF_SRcollect'; % -modified SP
                 S='Channel01/Zposition001'; % -modified SP
-                MIC_H5.createGroup(FileH5,S);
+                mic.H5.createGroup(FileH5,S);
                 obj.save2hdf5(FileH5,S);  %Working
             otherwise
                 error('StartSequence:: unknown SaveFileType')
@@ -535,7 +535,7 @@ end
 
 methods (Static)
 
-    function State = unitTest()
+    function State = funcTest()
         State = obj.exportState();
     end
 
