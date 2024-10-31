@@ -46,7 +46,7 @@ methods
         obj.Laser561 = mic.lightsource.CoherentLaser561('COM4');
      
         fprintf('Initializing 642 laser\n')
-        obj.Laser642 = mic_.lightsource.CubeLaserDiode('64838719','Power',80,182.5,1);
+        obj.Laser642 = mic.lightsource.TCubeLaserDiode('64838719','Power',80,182.5,1);
       
         % Lamp
         fprintf('Initializing lamp\n')
