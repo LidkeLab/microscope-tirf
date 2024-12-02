@@ -4,7 +4,7 @@ Total Internal Reflectance Fluorescence (TIRF) microscope is custom-built off an
 ```
 MIC_TIRF_SRcollect();
 ```
-MIC_TIRF_SRcollect() is a super resolution data collection software. The object calling MIC classes for Andor EMCCD camera, MCL NanoDrive stage, 405 nm CrystaLaser, 488 nm SpectaPhysics Laser, 561 nm Coherent Laser, 642 nm Thorlabs TCube Laser Diode, halogen lamp attached to microscope and the registration class Reg3DTrans.
+MIC_TIRF_SRcollect() is a super resolution data collection software. The object of data collection calls MIC classes for Andor EMCCD camera, MCL NanoDrive stage, 405 nm CrystaLaser, 488 nm SpectaPhysics Laser, 561 nm Coherent Laser, 642 nm Thorlabs TCube Laser Diode, halogen lamp attached to microscope and the registration class Reg3DTrans.
 
 The MIC_TIRF_SRcollect() class requires Matlab 2014b or higher and works with Matlab Instrument Control (MIC) classes [matlab-instrument-control](https://github.com/LidkeLab/matlab-instrument-control/tree/main)
 
@@ -14,7 +14,7 @@ The MIC_TIRF_SRcollect() class requires Matlab 2014b or higher and works with Ma
 - MadCityLabs Nano-LPS100, XYZ piezo stage, travel 100 $\mathrm{\mu m}$.
 ### Objective
 - Olympus APO N 100X oil Immersion, NA 1.49, WD 0.1 mm, FN 22.
-### Cameras
+### Camera
 - Hamamatsu C11440-22CU, sCMOS camera, 2048x2048 pixels, pixel size 6.5 $\mathrm{\mu m}$.
 ### Illumination
 - Crystal Laser, DL-405-010-O, 405 nm laser, 10 mW.
