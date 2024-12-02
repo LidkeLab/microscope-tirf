@@ -28,6 +28,3 @@ The MIC_TIRF_SRcollect() class requires Matlab 2014b or higher and works with Ma
 - Semrock, FF01-446/523/600/677-25, quad-band band pass filter.
 - Semrock, FF01-685/40-25, band pass filter.
 - Semrock, FF01-525/30-25, band pass filter.
-
-### Citation:
-[Fazel, M., Wester, M.J., Schodt, D.J. et al., "High-precision estimation of emitter positions using Bayesian grouping of localizations", Nat Commun 13, 7152 (2022)](https://doi.org/10.1038/s41467-022-34894-2)
