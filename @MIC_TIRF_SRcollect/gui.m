@@ -41,7 +41,7 @@ handles.Edit_FileDirectory = uicontrol('Parent',hFilePanel, 'Style', 'edit', 'St
 uicontrol('Parent',hFilePanel, 'Style', 'edit', 'String', 'Base FileName:','Enable','off','Position', [staticst php-65 100 20]);
 handles.Edit_FileName = uicontrol('Parent',hFilePanel, 'Style', 'edit', 'String','Set Auto','Enable','on','BackgroundColor',[1 1 1],'Position', [editst php-65 250 20]);
 uicontrol('Parent',hFilePanel, 'Style', 'edit', 'String','File type:','Enable','off','Position', [staticst php-90 100 20]);
-handles.saveFileType = uicontrol('Parent',hFilePanel, 'Style', 'popupmenu', 'String',{'.mat','.h5'},'Enable','on','BackgroundColor',[1 1 1],'Position', [editst php-90 250 20],'CallBack',@saveFile);
+handles.saveFileType = uicontrol('Parent',hFilePanel, 'Style', 'popupmenu', 'String',{'.mat','.h5'},'Value',2,'Enable','on','BackgroundColor',[1 1 1],'Position', [editst php-90 250 20],'CallBack',@saveFile);
 
 % Camera Panel
 ph=0.17;
